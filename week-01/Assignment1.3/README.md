@@ -15,3 +15,9 @@
 11.Resolve the conflict by combining all the numbers and commit the merge.
 
 List the commits using git log -p command and save the output in a file.
+
+
+### Team Members 
+1. Mehboob Ali
+2. Ali Umair
+3. Muzammil Mehmood 
