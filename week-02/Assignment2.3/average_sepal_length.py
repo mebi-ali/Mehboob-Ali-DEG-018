@@ -7,7 +7,7 @@ def average_sepal_length(df):
     return df.groupby('Species').agg({'SepalLengthCm': np.mean})
 
 # Load Iris data into pandas dataframe and calculate average sepal length
-df = pd.read_csv('./Iris.csv')
+df = pd.read_csv('./Data/Iris.csv')
 
 # Prints the result
 print(average_sepal_length(df))  
