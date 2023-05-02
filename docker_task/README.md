@@ -12,6 +12,7 @@ following are the specified version for libraries.
 	Version 0.9.0
 4. Scikit-learn:
 	Version 0.23.2
+
 PS : Ensure best practices are followed and containerised environment should be persistent. 
 
 
