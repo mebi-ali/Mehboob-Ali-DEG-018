@@ -1,0 +1,20 @@
+# Use an official Python runtime as a parent image
+FROM python:3.7
+
+# Set the working directory to /app
+WORKDIR /app
+
+# Copy the current directory contents into the container at /app
+COPY . /app
+
+# Install any needed packages specified in requirements.txt
+RUN pip install -r requirements.txt
+
+# Expose port 7059 to the hosto ;
+EXPOSE 7059
+
+# Print versions
+CMD ["bash", "-c", "echo 'Pandas version:' && python -c 'import pandas; print(pandas.__version__)' && \
+echo 'NumPy version:' && python -c 'import numpy; print(numpy.__version__)' && \
+echo 'Seaborn version:' && python -c 'import seaborn; print(seaborn.__version__)' && \
+echo 'Scikit-learn version:' && python -c 'import sklearn; print(sklearn.__version__)'"]
