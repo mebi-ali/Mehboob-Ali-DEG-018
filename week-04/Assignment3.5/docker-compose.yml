@@ -1,0 +1,51 @@
+# This file defines three services: db, wordpress, and phpMyAdmin
+# Each service has its own configuration settings and environment variables
+# Volumes are used to store persistent data for each service
+
+services:
+  db: # Database service
+    image: mariadb:10.6.4-focal
+    volumes: 
+      - db_data:/var/lib/mysql
+    restart: always 
+    environment: 
+      - MYSQL_ROOT_PASSWORD=somewordpress
+      - MYSQL_DATABASE=wordpress
+      - MYSQL_USER=wordpress
+      - MYSQL_PASSWORD=wordpress
+    expose: 
+      - 3306
+
+  wordpress: # WordPress service
+    image: wordpress:latest
+    volumes: 
+      - wp_data:/var/www/html
+    ports: 
+      - 80:80
+    restart: always 
+    environment: 
+      - WORDPRESS_DB_HOST=db
+      - WORDPRESS_DB_USER=wordpress
+      - WORDPRESS_DB_PASSWORD=wordpress
+      - WORDPRESS_DB_NAME=wordpress
+
+  phpmyadmin: # phpMyAdmin service
+    image: phpmyadmin
+    volumes: 
+      - data:/var/lib/phpmyadmin
+      - config:/etc/phpmyadmin
+    restart: always 
+    ports: 
+      - 8080:80
+    environment: 
+      - PMA_HOST:mysql
+      - MYSQL_PASSWORD:wordpress
+      - MYSQL_ROOT_PASSWORD:somewordpress
+      - PMA_USER:wordpress
+      - PMA_PASSWORD:wordpress
+
+volumes: 
+  db_data: 
+  wp_data: 
+  data: 
+  config: 
