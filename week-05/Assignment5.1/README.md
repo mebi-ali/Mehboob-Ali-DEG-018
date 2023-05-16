@@ -1,23 +1,20 @@
-# Description
+# Descrepition
 
-## Assignment4.3
+## Assignment5.1
 
-## Running PySpark examples in Jupyter Lab
+Based on the data contained in 
+tasks/4_data_pipelines/day_1_introduction/daily_assignment/data 
+directory, use PySpark to read, filter and join the data from CSV files and answer the following questions:
 
-We'll run our Spark examples using official
-`jupyter/pyspark-notebook` Docker image. In order to run a container based on this image, execute:
-```shell
-docker run -it --rm -p 8888:8888 jupyter/pyspark-notebook
-```
-This command will run a container and provide you with the link to Jupyter Lab workspace. Paste this link into your
-browser, and you're good to go!
+What are the daily total sales for the store with id 1?
 
-In order to run the example, when in your Jupyter Lab workspace, copy the file `spark_example.ipynb` into `work/` folder.
-Then, create `data/` folder and upload files `store_1.csv` and `store_2.csv` there. You should now be able to run the
-example notebook
+What are the mean sales for the store with id 2?
 
+What is the email of the client who spent the most when summing up purchases from all of the stores?
+
+Which 5 products are most frequently bought across all stores?
 
 ### Team Members 
 1. Mehboob ali
-2. Ali Umair 
+2. Ali Umair
 3. Muhammad Khan
