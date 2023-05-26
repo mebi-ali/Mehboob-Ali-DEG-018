@@ -18,3 +18,4 @@ def test_add_positive_3_neg4_returns_None():
 # Checking addition of negative -3 and positive 4 returns None
 def test_add_positive_neg_3_4_returns_None():
     assert add_positive(-3, 4) == None
+
